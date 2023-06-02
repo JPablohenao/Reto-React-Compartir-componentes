@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+import CardsOne from './CardsOne';
 
-function App() {
+
+function MultiActionAreaCard() {
+
+  const array = []
+  array.push({ "text": "Esta es la card 1", "img": require("../src/img/one.jpeg"), "msg": "La card 1 te manda saludos" });
+  array.push({ "text": "Esta es la card 2", "img": require("../src/img/react.png"), "msg": "La card 2 te manda saludos" });
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {array.map(object => <CardsOne object={object}>
+      </CardsOne>)}
+    </>
+  )
+
 }
 
-export default App;
+
+export default MultiActionAreaCard;
